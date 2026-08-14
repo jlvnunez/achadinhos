@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JLVNUNEZ | Ofertas da Semana</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIÁVEIS DE DESIGN MODERNO */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      
+      --bg-gradient: radial-gradient(circle at 50% 0%, #f1f5f9 0%, #e2e8f0 100%);
+      --surface: #ffffff;
+      --surface-secondary: #f8fafc;
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 30px -10px rgba(79, 70, 229, 0.15);
+      
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 12px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* CONTAINER PRINCIPAL RESPONSIVO */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* TOP BAR / HERO */
+    .hero {
+      text-align: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid var(--surface);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* BENEFÍCIOS */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 600px;
+      margin: 24px auto 0 auto;
+    }
+
+    .benefit-card {
+      background: var(--surface-secondary);
+      padding: 12px 10px;
+      border-radius: 16px;
+      text-align: center;
+      font-size: 1.2rem;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-card h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 6px;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ESTRUTURA DE LAYOUT EM DUAS COLUNAS */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* OFERTA PRINCIPAL */
+    .offer {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .offer:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .offer-image {
+      position: relative;
+      background: var(--surface-secondary);
+    }
+
+    .offer-image img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .offer-content {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .tag {
+      background: var(--accent-gradient);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25);
+    }
+
+    .offer-content h2 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+    }
+
+    .offer-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .old-price {
+      color: var(--text-muted);
+      font-size: 1rem;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+
+    .new-price {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin: 4px 0 20px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .buy-btn {
+      display: block;
+      background: var(--success-gradient);
+      color: white;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+      transition: var(--transition);
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      filter: brightness(1.05);
+    }
+
+    /* TÍTULOS DAS SEÇÕES */
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .section-block {
+      width: 100%;
+    }
+
+    /* CATEGORIAS */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .category {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 14px 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .category:hover {
+      background: var(--surface);
+      border-color: #6366f1;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .category span {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .category h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* LOJAS */
+    .stores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .store-link {
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .store {
+      padding: 14px 8px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .store:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .shopee { background: linear-gradient(135deg, #ee4d2d, #ff7337); }
+    .magalu { background: linear-gradient(135deg, #0086ff, #0055ff); }
+    .mercado { background: linear-gradient(135deg, #ffe600, #ffd000); color: #2d3748; }
+
+    /* PRODUTOS MAIS VENDIDOS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .product {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+    }
+
+    .product img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      background: var(--surface-secondary);
+    }
+
+    .product-info {
+      padding: 12px 8px;
+    }
+
+    .product-info h3 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .product-info p {
+      color: #4f46e5;
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* VIP */
+    .vip {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .vip h2 { font-size: 1.2rem; margin-bottom: 4px; font-weight: 700; color: white; }
+    .vip p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 18px; }
+
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-btn {
+      display: block;
+      padding: 12px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    .whatsapp { background: #25d366; }
+    .telegram { background: #0088cc; }
+    .instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      font-weight: 500;
+    }
+
+    /* MEDIA QUERIES (DESKTOP) */
+    @media (min-width: 850px) {
+      body {
+        padding: 40px 20px;
+      }
+
+      .container {
+        padding: 44px;
+      }
+
+      .main-layout {
+        grid-template-columns: 4.8fr 5.2fr;
+        gap: 36px;
+      }
+
+      .product img {
+        height: 130px;
+      }
+
+      .socials {
+        flex-direction: row;
+      }
+      
+      .social-btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <img class="logo" src="imagens/logo.png" alt="Logo JLVNUNEZ">
+      <h1>JLVNUNEZ</h1>
+      <p>🔥 Os melhores achadinhos da internet</p>
+
+      <div class="benefits">
+        <div class="benefit-card">🎟️<h3>Cupons Exclusivos</h3></div>
+        <div class="benefit-card">🚚<h3>Frete Grátis</h3></div>
+        <div class="benefit-card">⚡<h3>Ofertas Diárias</h3></div>
+      </div>
+    </section>
+
+    <div class="main-layout">
+      
+      <div class="col-left">
+        <section class="offer">
+          <div class="offer-image">
+            <img src="https://down-bs-br.img.susercontent.com/br-11134207-81z1k-mfbkfi6i2ryc96.webp" alt="">
+          </div>
+          <div class="offer-content">
+            <span class="tag">🔥 Oferta do Dia</span>
+            <h2>Celular IPhone 17 Pro E Pro Max 256GB 5G Dual E-sim Lacrado Original 1 Ano De Garantia Apple</h2>
+            <p>Celular IPhone 17 Pro E Pro Max 256GB 5G Dual E-sim Lacrado Original 1 Ano De Garantia Apple</p>
+            
+            <div class="old-price" id="main-old-price">R$8.229,90</div>
+            <div class="new-price" id="main-new-price">R$7.579,90</div>
+            
+            <a href="https://s.shopee.com.br/1qbENrYHII" target="_blank" class="buy-btn">🛒 COMPRAR AGORA</a>
+          </div>
+        </section>
+
+        <section class="vip">
+          <h2>🚀 Entre no Grupo VIP</h2>
+          <p>Receba promoções antes de todo mundo</p>
+          <div class="socials">
+            <a href="#" class="social-btn whatsapp">WhatsApp</a>
+            <a href="#" class="social-btn telegram">Telegram</a>
+            <a href="#" class="social-btn instagram">Instagram</a>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-right">
+        
+        <div class="section-block">
+          <h2 class="section-title">⭐ Categorias em Destaque</h2>
+          <section class="categories">
+            <div class="category"><span>📱</span><h4>Tecnologia</h4></div>
+            <div class="category"><span>👟</span><h4>Moda</h4></div>
+            <div class="category"><span>🏠</span><h4>Casa</h4></div>
+            <div class="category"><span>🚗</span><h4>Automotivo</h4></div>
+            <div class="category"><span>💄</span><h4>Beleza</h4></div>
+          </section>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">🛍️ Compre nas Melhores Lojas</h2>
+          <section class="stores">          
+            <a href="https://collshp.com/jlvnunez" target="_blank" class="store-link">
+              <div class="store shopee">Shopee</div>
+            </a>
+            <a href="https://www.magazinevoce.com.br/magazinejlvnunez" target="_blank" class="store-link">
+              <div class="store magalu">Magalu</div>
+            </a>
+            <a href="https://mercadolivre.com/sec/2A4c3qa" target="_blank" class="store-link">
+              <div class="store mercado">Mercado Livre</div>
+            </a>
+          </section>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">🔥 Mais Vendidos da Semana</h2>
+          <section class="products">
+            
+           
+            <div class="product">     <!--prod-1  --> 
+              <a href="https://s.shopee.com.br/1gHoCepIt2" target="_blank" class="store-link">
+                <img src="https://down-bs-br.img.susercontent.com/br-11134207-81ztc-mj7ugq1t7qpv96.webp" alt="">
+                <div class="product-info">
+                  <h3>Tênis Branco Casual Feminino Plataforma Confortavel Sola Pintada</h3>
+                  <p id="prod1-price">R$ 49,80</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="product">     <!--prod-2  --> 
+              <a href="https://s.shopee.com.br/3LQ2ClIZ4k" target="_blank" class="store-link">
+                <img src="https://down-bs-br.img.susercontent.com/br-11134207-820lz-mohkzupu3itc43.webp" alt="">
+                <div class="product-info">
+                  <h3>Óculos de Grau Automático Perto/Longe (Escurece no Sol)</h3>
+                  <p id="prod2-price">R$36,00</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="product">  <!--prod-3  --> 
+              <a href="https://s.shopee.com.br/AAGMMk9net" target="_blank" class="store-link">
+                <img src="https://down-bs-br.img.susercontent.com/br-11134207-820ll-mpl5ke4mt4w281.webp" alt="">
+                <div class="product-info">
+                  <h3>Toalha de Mesa Decoração 4/6/8/10/12/14 e 16 Lugares Estampada Jacquard</h3>
+                  <p id="prod3-price">R$ 24,10</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="product">  <!--prod-4  --> 
+              <a href="https://s.shopee.com.br/4fvPwOhE8A" target="_blank" class="store-link">
+                <img src="https://down-bs-br.img.susercontent.com/br-11134207-7r98o-mcnhtym472gi2a.webp" alt="">
+                <div class="product-info">
+                 <h3>Kit 4 Pneus 175/70R14 Goodyear Kelly Edge Touring 2 88T</h3>
+                  <p id="prod4-price">R$ </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="product">    <!--prod-5  --> 
+              <a href="" target="_blank" class="store-link">
+                <img src=" " alt="">
+                <div class="product-info">
+                  <h3> produto</h3>
+                  <p id="prod5-price">R$ </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="product">    <!--prod-6  --> 
+              <a href="" target="_blank" class="store-link">
+                <img src=" " alt="">
+                <div class="product-info">
+                  <h3> produto </h3>
+                  <p id="prod6-price">R$ </p>
+                </div>
+              </a>
+            </div>
+            
+          </section>
+        </div>
+
+      </div>
+
+    </div> 
+    
+    <footer>
+      ❤️ JLVNUNEZ — Achadinhos que valem cada centavo
+    </footer>
+
+  </div>
+
+  <script>
+    async function atualizarPrecos() {
+      try {
+        const response = await fetch('precos.json');
+        const precosAtualizados = await response.json();
+        
+        document.getElementById('main-old-price').innerText = precosAtualizados.iphoneVelho;
+        document.getElementById('main-new-price').innerText = precosAtualizados.iphoneNovo;
+        document.getElementById('prod1-price').innerText = precosAtualizados.tenisFeminino;
+        document.getElementById('prod2-price').innerText = precosAtualizados.oculos;
+        document.getElementById('prod3-price').innerText = precosAtualizados.toalhaMesa;
+        document.getElementById('prod4-price').innerText = precosAtualizados.pneus;
+        document.getElementById('prod5-price').innerText = precosAtualizados.prod5 ;
+        document.getElementById('prod6-price').innerText = precosAtualizados.prod6; 
+        console.log("Preços atualizados com sucesso via JSON!");
+      } catch (error) {
+        console.error("Erro ao carregar preços do arquivo JSON:", error);
+      }
+    }
+
+    window.onload = atualizarPrecos;
+  </script>
+
+</body>
+</html>
