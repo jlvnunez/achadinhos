@@ -548,6 +548,13 @@
       .social-btn {
         flex: 1;
       }
+      .mao{ 
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        font-size: 40px;
+        
+      }
     }
   </style>
 </head>
@@ -579,11 +586,11 @@
             <span class="tag">🔥 Oferta do Dia</span>
             <h2>IPhone 17 Pro / 17 Pro Max 256GB • Novo Original NF Lacrado</h2>
             <p>IPhone 17 Pro / 17 Pro Max 256GB • Novo Original NF Lacrado</p>
+          
+          <!--<div class="old-price" id="main-old-price">R$8.229,90</div>
+            <div class="new-price" id="main-new-price">R$7.579,90</div>-->
             
-            <div class="old-price" id="main-old-price">R$8.229,90</div>
-            <div class="new-price" id="main-new-price">R$7.579,90</div>
-            
-            <a href="https://s.shopee.com.br/7Ad0deFoCK"target="_blank" class="buy-btn">🛒 COMPRAR AGORA</a>
+            <a href="https://s.shopee.com.br/7Ad0deFoCK"target="_blank" class="buy-btn">🛒 Acesso a Loja</a>
           </div>
         </section>
 
@@ -591,7 +598,7 @@
           <h2>🚀 Entre no Grupo VIP</h2>
           <p>Receba promoções antes de todo mundo</p>
           <div class="socials">
-            <a href="https://wa.me/5563991208340"target="_blank" class="social-btn whatsapp">WhatsApp</a>
+            <!--<a href="https://wa.me/5563991208340"target="_blank" class="social-btn whatsapp">WhatsApp</a>-->
             <a href="https://t.me/jlvnunez" target="_blank" class="social-btn telegram">Telegram</a>
             <a href="https://www.instagram.com/jlvnunez" class="social-btn instagram">Instagram</a>
           </div>
@@ -612,7 +619,8 @@
         </div>
 
         <div class="section-block">
-          <h2 class="section-title">🛍️ Compre nas Melhores Lojas</h2>
+          <h2 class="section-title">🛍️ Acesso Melhores Achadinhos Estão aqui!</h2>
+          <span class="mao">&#128071</span>
           <section class="stores">          
             <a href="https://collshp.com/jlvnunez" target="_blank" class="store-link">
               <div class="store shopee">Shopee</div>
@@ -635,7 +643,7 @@
                 <img src="https://down-bs-br.img.susercontent.com/br-11134207-81ztc-mj7ugq1t7qpv96.webp" alt="Tênis Branco">
                 <div class="product-info">
                   <h3>Tênis Branco Casual Feminino Plataforma Confortavel Sola Pintada</h3>
-                  <p id="prod1-price">R$ 49,80</p>
+                  <p id="prod1-price">acesso a Loja</p>
                 </div>
               </a>
             </div>
@@ -645,7 +653,7 @@
                 <img src="https://down-bs-br.img.susercontent.com/br-11134207-820lz-mohkzupu3itc43.webp" alt="Óculos de Grau">
                 <div class="product-info">
                   <h3>Óculos de Grau Automático Perto/Longe (Escurece no Sol)</h3>
-                  <p id="prod2-price">R$36,00</p>
+                  <p id="prod2-price">acesso a Loja</p>
                 </div>
               </a>
             </div>
@@ -655,7 +663,7 @@
                 <img src="https://down-bs-br.img.susercontent.com/br-11134207-820ll-mpl5ke4mt4w281.webp" alt="Toalha de Mesa">
                 <div class="product-info">
                   <h3>Toalha de Mesa Decoração 4/6/8/10/12/14 e 16 Lugares Estampada Jacquard</h3>
-                  <p id="prod3-price">R$ 24,10</p>
+                  <p id="prod3-price">acesso a Loja</p>
                 </div>
               </a>
             </div>
@@ -665,7 +673,7 @@
                 <img src="https://down-aka-br.img.susercontent.com/br-11134207-820lp-mpw95s979m9veb.webp" alt="">
                 <div class="product-info">
                   <h3>PlayStation 5 Slim Edição Disk 1TB SSD - PS5</h3>
-                  <p id="prod4-price">R$ </p>
+                  <p id="prod4-price">acesso a Loja </p>
                 </div>
               </a>
             </div>
@@ -675,7 +683,7 @@
                 <img src="https://down-bs-br.img.susercontent.com/br-11134207-81z1k-mezv9ddxf9qc89.webp " alt="">
                 <div class="product-info">
                   <h3> Conjunto Feminino Alfaiataria Blusa Camisa Botão e Saia Longa Moda Evangélica Elegante Colete</h3>
-                  <p id="prod5-price">R$ </p>
+                  <p id="prod5-price">acesso a Loja </p>
                 </div>
               </a>
             </div>
@@ -685,7 +693,7 @@
                 <img src="https://down-bs-br.img.susercontent.com/br-11134207-820lm-mo9w59wup1xj7a.webp " alt="">
                 <div class="product-info">
                   <h3>Desinfetante Herbal pet concentrado 1Lt elimina odor bactericida </h3>
-                  <p id="prod6-price">R$ </p>
+                  <p id="prod6-price">acesso a Loja </p>
                 </div>
               </a>
             </div>
@@ -709,14 +717,14 @@
         const response = await fetch('precos.json');
         const precosAtualizados = await response.json();
         
-        document.getElementById('main-old-price').innerText = precosAtualizados.iphoneVelho;
-        document.getElementById('main-new-price').innerText = precosAtualizados.iphoneNovo;
-        document.getElementById('prod1-price').innerText = precosAtualizados.tenisFeminino;
-        document.getElementById('prod2-price').innerText = precosAtualizados.oculos;
-        document.getElementById('prod3-price').innerText = precosAtualizados.toalhaMesa;
+        document.getElementById('main-old-price').innerText = precosAtualizados.normal;
+        document.getElementById('main-new-price').innerText = precosAtualizados.oferta;
+        document.getElementById('prod1-price').innerText = precosAtualizados.prod_01;
+        document.getElementById('prod2-price').innerText = precosAtualizados.prod_02;
+        document.getElementById('prod3-price').innerText = precosAtualizados.prod_03;
         document.getElementById('prod4-price').innerText = precosAtualizados.prod_04;
-        document.getElementById('prod5-price').innerText = precosAtualizados.vestidoLongo;
-        document.getElementById('prod6-price').innerText = precosAtualizados.herbalpet; 
+        document.getElementById('prod5-price').innerText = precosAtualizados.prod_05;
+        document.getElementById('prod6-price').innerText = precosAtualizados.prod_06; 
         console.log("Preços atualizados com sucesso via JSON!");
       } catch (error) {
         console.error("Erro ao carregar preços do arquivo JSON:", error);
